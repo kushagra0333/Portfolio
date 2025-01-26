@@ -331,7 +331,7 @@ footer .social-icons a:hover {
             </nav>
             
             <button id="theme-switch" class="btn-custom stick-button">
-                <i class="fas fa-moon "></i>
+                <i class="fas fa-sun "></i>
               </button>
         </div>
     </header>
@@ -547,7 +547,7 @@ document.addEventListener("DOMContentLoaded", () => {
           document.documentElement.style.setProperty("--card-bg", "#e9ecef");
 
           switchButton.innerHTML =
-            '<i class="fas fa-sun"></i>'; // Update icon and text
+            '<i class="fas fa-moon"></i>'; // Update icon and text
         } else {
           // Switch to Dark Theme
           document.documentElement.style.setProperty("--primary-bg", "#0d1117");
@@ -558,7 +558,7 @@ document.addEventListener("DOMContentLoaded", () => {
           document.documentElement.style.setProperty("--card-bg", "#1f242b");
 
           switchButton.innerHTML =
-            '<i class="fas fa-moon"></i>'; // Update icon and text
+            '<i class="fas fa-sun"></i>'; // Update icon and text
         }
         isDarkTheme = !isDarkTheme; // Toggle theme state
       };
