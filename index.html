@@ -12,289 +12,298 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <style>
-        :root {
-            --primary-bg: #0d1117;
-            --secondary-bg: #161b22;
-            --accent: #58a6ff;
-            --text-color: #c9d1d9;
-            --muted-text: #6e7681;
-            --card-bg: #1f242b;
-        }
+   <style>
+          /* CSS Variables */
+:root {
+    --primary-bg: #0d1117;
+    --secondary-bg: #161b22;
+    --accent: #58a6ff;
+    --text-color: #c9d1d9;
+    --muted-text: #6e7681;
+    --card-bg: #1f242b;
+}
 
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-            background: var(--primary-bg);
-            color: var(--text-color);
-        }
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background: var(--primary-bg);
+    color: var(--text-color);
+}
 
-        header {
-        position: sticky;
-        top: 0;
-        background: #0d1117;
-        color: #c9d1d9;
-        padding: 10px 20px;
-        z-index: 100;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+header {
+    position: sticky;
+    top: 0;
+    background: var(--primary-bg);
+    color: var(--text-color);
+    padding: 10px 20px;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-    .header-img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid #58a6ff;
-    }
+.header-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+}
 
-    h1 {
-        margin: 0;
-        font-size: 1.5rem;
-        color: #c9d1d9;
-    }
+h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
 
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--text-color);
+    transition: 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     nav {
-        display: flex;
-        gap: 15px;
-    }
-
-    nav a {
-        color: #c9d1d9;
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-
-    nav a:hover {
-        color: #58a6ff;
-    }
-
-    /* Hamburger Menu */
-    .hamburger {
         display: none;
         flex-direction: column;
-        justify-content: space-between;
-        width: 25px;
-        height: 20px;
-        background: none;
-        border: none;
-        cursor: pointer;
+        gap: 10px;
+        background: var(--secondary-bg);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
 
-    .hamburger span {
-        display: block;
-        height: 3px;
-        width: 100%;
-        background-color: #c9d1d9;
-        transition: 0.3s ease;
+    nav.show {
+        display: flex;
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        nav {
-            display: none;
-            flex-direction: column;
-            gap: 10px;
-            background: #161b22;
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        nav.show {
-            display: flex;
-        }
-
-        .hamburger {
-            display: flex;
-        }
+    .hamburger {
+        display: flex;
     }
-        section {
-            padding: 50px 20px;
-            text-align: center;
-        }
+}
 
-        #hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 80px 20px;
-            background: linear-gradient(120deg, #161b22, #0d1117);
-            color: var(--text-color);
-            text-align: left;
-        }
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
 
-        #hero img {
-            max-width: 300px;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 80px 20px;
+    background: linear-gradient(120deg, var(--secondary-bg), var(--primary-bg));
+    color: var(--text-color);
+    text-align: left;
+}
 
-        #hero .hero-text {
-            max-width: 500px;
-        }
+#hero img {
+    max-width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
 
-        #hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            color: var(--accent);
-        }
+#hero .hero-text {
+    max-width: 500px;
+}
 
-        section h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--accent);
-        }
+#hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--accent);
+}
 
-        section p {
-            max-width: 800px;
-            margin: 0 auto 30px;
-            font-size: 1rem;
-            color: var(--muted-text);
-        }
+section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--accent);
+}
 
-        .section-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+section p {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    font-size: 1rem;
+    color: var(--muted-text);
+}
 
-        .card {
-            display: flex;
+.section-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 300px;
-            text-align: left;
-            text-decoration: none;
-        }
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: left;
+    text-decoration: none;
+}
 
-        .card h3 {
-            margin-top: 0;
-            font-size: 1.2rem;
-            color: var(--accent);
-        }
-        /*--custom button--*/
-        .btn-custom {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #58a6ff;
-        color: #c9d1d9;
-        font-size: 1rem;
-        text-decoration: none;
-        border-radius: 5px;
-        transition: background-color 0.3s, transform 0.3s;
-        font-weight: bold;
-        text-align: center;
+.card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+/* Custom Button */
+.btn-custom {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent);
+    color: var(--text-color);
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold;
+    text-align: center;
     margin-top: 10px;
+}
+
+.btn-custom:hover {
+    background-color: #1f80d3;
+    transform: translateY(-2px);
+}
+
+.btn-custom:active {
+    background-color: #1f80d3;
+    transform: translateY(0);
+}
+
+.btn-custom:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(88, 166, 255, 0.7);
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.skills-list li {
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 10px 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.skills-list li:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+footer {
+    background: var(--secondary-bg);
+    padding: 20px;
+    text-align: center;
+}
+
+footer .social-icons a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: var(--accent);
+}
+
+.scroll-animation {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+.scroll-animation.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    #hero {
+        flex-direction: column;
+        text-align: center;
     }
-       
-    
-    .btn-custom:hover {
-        background-color: #1f80d3; 
-        transform: translateY(-2px);
+
+    #hero img {
+        margin-bottom: 20px;
     }
+}
+.stick-button{
+    position: fixed;
+    right: 10px;
+    bottom: 20px;
+}
 
-    .btn-custom:active {
-        background-color: #1f80d3;
-        transform: translateY(0); 
-    }
-
-    .btn-custom:focus {
-        outline: none; 
-        box-shadow: 0 0 5px rgba(88, 166, 255, 0.7); 
-    }
-        .skills-list {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-        margin: 20px auto;
-        max-width: 800px;
-    }
-
-    .skills-list li {
-        background: var(--card-bg);
-        color: var(--text-color);
-        padding: 10px 15px;
-        border-radius: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        font-size: 1rem;
-        font-weight: bold;
-        transition: background 0.3s, transform 0.2s;
-    }
-
-    .skills-list li:hover {
-        background: var(--accent);
-        color: #fff;
-        transform: translateY(-3px);
-    }
-
-        footer {
-            background: var(--secondary-bg);
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer .social-icons a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-
-        footer .social-icons a:hover {
-            color: var(--accent);
-        }
-
-        .scroll-animation {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s, transform 0.6s;
-        }
-
-        .scroll-animation.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (max-width: 768px) {
-          
-            #hero {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            #hero img {
-                margin-bottom: 20px;
-            }
-        }
-    </style>
+   </style>
   </head>
   <body>
     <header>
@@ -308,6 +317,9 @@
                 <span></span>
                 <span></span>
             </button>
+        
+                
+          
             <nav id="nav-links">
                 <a href="#hero">About</a>
                 <a href="#experience">Experience</a>
@@ -315,7 +327,12 @@
                 <a href="#skills">Skills</a>
                 <a href="#education">Education</a>
                 <a href="#contact">Contact</a>
+               
             </nav>
+            
+            <button id="theme-switch" class="btn-custom stick-button">
+                <i class="fas fa-moon "></i>
+              </button>
         </div>
     </header>
      
@@ -329,6 +346,7 @@
           modern web technologies like React.js, Bootstrap, Tailwind CSS, and
           MongoDB, I thrive on transforming ideas into reality.
         </p>
+      
       </div>
      <div> <img src="./kushagra.jpg" alt="Profile Picture" />
         <h1>Web Developer</h1>
@@ -365,7 +383,10 @@
         <div class="card">
           <h3>Maker Stage</h3>
           <p>
-          Contributed as a frontend developer to create essential features for the website, including the home page, hero section, responsive navbar, footer, and resources section. Focused on ensuring performance optimization, accessibility, and clean, reusable code while aligning the design with project requirements.
+            Worked as a frontend developer to create key features like login,
+            signup, dashboard, and step forms for the "Get a Quote" section.
+            Contributed to designing and optimizing pages for better
+            performance.
           </p>
           <p>
             <a class="btn-custom" href="https://www.makerstage.com" target="_blank">
@@ -423,14 +444,14 @@
     <section id="education" class="scroll-animation">
       <h1>Education</h1>
       <div class="section-container">
-        <a href="https://kvsangathan.nic.in//" target="_blank" class="card">
+        <a href="http://www.kvnoida.edu.in/" target="_blank" class="card">
             <h3>10th Class</h3>
             <p>
               <strong>Kendriya Vidyalaya Noida, Sector 24</strong> (2019 - 2021)
             </p>
             <p>Scored great marks in the 10th grade.</p>
           </a>
-        <a href="https://kvsangathan.nic.in//" target="_blank" class="card">
+        <a href="http://www.kvnoida.edu.in/" target="_blank" class="card">
             <h3>12th Class - Science Stream</h3>
             <p>
               <strong>Kendriya Vidyalaya Noida, Sector 24</strong> (2021 - 2023)
@@ -510,7 +531,41 @@
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('show');
     });
+/*---theme switch -----*/
+document.addEventListener("DOMContentLoaded", () => {
+      const switchButton = document.getElementById("theme-switch");
+      let isDarkTheme = true; // Default is Dark Theme
 
+      const toggleTheme = () => {
+        if (isDarkTheme) {
+          // Switch to Light Theme
+          document.documentElement.style.setProperty("--primary-bg", "#f8f9fa");
+          document.documentElement.style.setProperty("--secondary-bg", "#ffffff");
+          document.documentElement.style.setProperty("--accent", "#007bff");
+          document.documentElement.style.setProperty("--text-color", "#212529");
+          document.documentElement.style.setProperty("--muted-text", "#6c757d");
+          document.documentElement.style.setProperty("--card-bg", "#e9ecef");
+
+          switchButton.innerHTML =
+            '<i class="fas fa-sun"></i>'; // Update icon and text
+        } else {
+          // Switch to Dark Theme
+          document.documentElement.style.setProperty("--primary-bg", "#0d1117");
+          document.documentElement.style.setProperty("--secondary-bg", "#161b22");
+          document.documentElement.style.setProperty("--accent", "#58a6ff");
+          document.documentElement.style.setProperty("--text-color", "#c9d1d9");
+          document.documentElement.style.setProperty("--muted-text", "#6e7681");
+          document.documentElement.style.setProperty("--card-bg", "#1f242b");
+
+          switchButton.innerHTML =
+            '<i class="fas fa-moon"></i>'; // Update icon and text
+        }
+        isDarkTheme = !isDarkTheme; // Toggle theme state
+      };
+
+      // Add click event listener to toggle theme
+      switchButton.addEventListener("click", toggleTheme);
+    });
 
     </script>
   </body>
